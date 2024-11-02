@@ -1,0 +1,22 @@
+<div class = "center">
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h3> <strong>Car</strong></h3>
+    <h5 class="card-title"><%=@car.brand %></h5>
+    <p class="card-text"><%=@car.model %></p>
+  </div>
+   <ul class="list-group list-group-flush">
+      <li class="list-group-item"> <strong>Year: </strong><%= @car.year%></li>
+      <li class="list-group-item"><strong>Price: </strong><%= @car.price %></li>
+      <li class="list-group-item"> <strong>Capacity: </strong> <%= @car.capacity %></li>
+       <li class="list-group-item"> <strong>Color: </strong> <%= @car.color%></li>
+   </ul>
+  <div class="card-body">
+    <a href="/cars/" class="card-link">Edit</a>
+    <%= link_to "Delete",
+  car_path(@car),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+  </div>
+  </div>
+</div>
