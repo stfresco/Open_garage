@@ -8,54 +8,66 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+
 # db/seeds.rb
+puts "Eliminando bookings"
+Booking.destroy_all
+puts "Eliminando cars"
+Car.destroy_all
+puts "Eliminando garages"
+Garage.destroy_all
+puts "Eliminando usuarios"
+User.destroy_all
+
 
 #users
-user1 = User.create(
+user1 = User.create!(
   email: "john@example.com",
-  encrypted_password: "password123",
+  password: "password123",
   user_type: "arrendador",
   phone: "123-456-7890",
   address: "123 Main St, New York, NY"
 )
-
-user2 = User.create(
+puts "se ha creado el usuario: #{user1.email}"
+user2 = User.create!(
   email: "jane@example.com",
-  encrypted_password: "password456",
+  password: "password456",
   user_type: "arrendatario",
   phone: "234-567-8901",
   address: "456 Elm St, Los Angeles, CA"
 )
+puts "se ha creado el usuario: #{user2.email}"
 
-user3 = User.create(
+user3 = User.create!(
   email: "alex@example.com",
-  encrypted_password: "password789",
+  password: "password789",
   user_type: "arrendador",
   phone: "345-678-9012",
   address: "789 Oak St, San Francisco, CA"
 )
+puts "se ha creado el usuario: #{user3.email}"
 
 #garage
-garage1 = Garage.create(
+garage1 = Garage.create!(
   name: "Garage Central",
   address: "100 Main St, New York, NY",
-  user_id: user1
+  user_id: user1.id
 )
 
-garage2 = Garage.create(
+garage2 = Garage.create!(
   name: "Downtown Garage",
   address: "200 Elm St, Los Angeles, CA",
-  user_id: user2
+  user_id: user2.id
 )
 
-garage3 = Garage.create(
+garage3 = Garage.create!(
   name: "Sunset Garage",
   address: "300 Oak St, San Francisco, CA",
-  user_id: user3
+  user_id: user3.id
 )
 
 #cars
-cars_data = [
+cars_data = Car.create! [
   { model: "Camry", year: 2022, brand: "Toyota", color: "Black", capacity: 5, extras: "GPS, Bluetooth", price: 50.0, garage: garage1 },
   { model: "Civic", year: 2021, brand: "Honda", color: "Red", capacity: 5, extras: "Sunroof, Leather seats", price: 45.0, garage: garage2 },
   { model: "Focus", year: 2020, brand: "Ford", color: "Blue", capacity: 5, extras: "Backup camera, Heated seats", price: 40.0, garage: garage3 },
