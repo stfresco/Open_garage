@@ -5,11 +5,8 @@
     <h5 class="card-title"><%=@garage.address%></h5>
     <p class="card-text"><%=@garage.name %></p>
   </div>
-    <a href="/garages/" class="card-link">Edit</a>
-    <%= link_to "Delete",
-  garage_path(@garage),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+     <%= link_to "edit", edit_garage_path(@garage)%>
+  <%= link_to "Delete",garage_path(@garage), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
   </div>
   </div>
 </div>
