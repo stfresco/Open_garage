@@ -8,6 +8,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+
 # db/seeds.rb
 
 #users
@@ -72,3 +73,4 @@ cars_data = [
   { model: "Impala", year: 2020, brand: "Chevrolet", color: "Black", capacity: 5, extras: "Sunroof, Bluetooth", price: 42.0, garage: garage2 },
   { model: "Q5", year: 2021, brand: "Audi", color: "Red", capacity: 5, extras: "Leather seats, GPS", price: 63.0, garage: garage3 },
 ]
+
