@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.car = @car
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to my_bookings_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -36,7 +36,11 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to car_path(@Booking.car), status: :see_other
+    redirect_to my_bookings_path, status: :see_other
+  end
+
+  def my_bookings
+    @my_bookings = Booking.where(user: current_user)
   end
 
   private
