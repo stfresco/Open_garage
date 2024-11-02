@@ -12,11 +12,8 @@
        <li class="list-group-item"> <strong>Color: </strong> <%= @car.color%></li>
    </ul>
   <div class="card-body">
-    <a href="/cars/" class="card-link">Edit</a>
-    <%= link_to "Delete",
-  car_path(@car),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+    <%= link_to "edit", edit_car_path(@car)%>
+    <%= link_to "Delete", car_path(@car), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
   </div>
   </div>
 </div>
