@@ -35,6 +35,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.2]
       t.string :user_type, default: "buyer"
       t.string :phone
       t.string :address
+      #t.string :name
+      #t.string :last_name
 
       t.timestamps null: false
     end
