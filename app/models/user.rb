@@ -4,7 +4,9 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
   has_many :garages
+  
   validates :phone, presence: true
   validates :address, presence: true
 
