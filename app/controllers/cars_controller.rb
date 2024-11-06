@@ -1,4 +1,6 @@
 class CarsController < ApplicationController
+
+
   def index
     @cars = Car.all
   end
@@ -10,9 +12,9 @@ class CarsController < ApplicationController
   def create
     @car = Car.new(car_params)
     if @car.save
-      redirect_to cars_path
+      redirect_to garage_path(@garage), notice: "You have register a new car"
     else
-      render :new
+      render :new, alert: "We have a problem to register your car"
     end
   end
 
@@ -43,6 +45,6 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:brand, :color, :year, :price, :model, :capacity, :garage_id)
+    params.require(:car).permit(:brand, :color, :year, :price, :model, :capacity, :garage_id, :image)
   end
 end

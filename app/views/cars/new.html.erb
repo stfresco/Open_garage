@@ -5,7 +5,8 @@
   <%= c.input :price%>
   <%= c.input :capacity%>
   <%= c.input :color%>
-  <%= c.input :image_car%>
+  <%= c.input :image%>
   <%=  c.association :garage, collection: current_user.garages, prompt: "Choose a garage" %>
- <%=c.submit %>
+  <%=c.submit %>
   <%end%>
+

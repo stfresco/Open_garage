@@ -6,7 +6,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :garages
-  
+  has_many :bookings
+
   validates :phone, presence: true
   validates :address, presence: true
 
