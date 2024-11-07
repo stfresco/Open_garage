@@ -17,4 +17,12 @@ Rails.application.routes.draw do
   resources :bookings, only: [:show, :edit, :update, :destroy]
 
   get "my_bookings", to: "bookings#my_bookings"
+
+  resources :garages do
+    resources :cars, only: [:new, :create, :edit, :update, :destroy]
+  end
+
+  resources :cars, only: [:index, :show]
+
+  resources :bookings, only: [:create, :edit, :update, :destroy]
 end

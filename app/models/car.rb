@@ -1,6 +1,6 @@
 class Car < ApplicationRecord
   belongs_to :garage
-  has_one_attached :image_car
+  has_one_attached :image
 
   validates :model, presence: true
   validates :year, presence: true
