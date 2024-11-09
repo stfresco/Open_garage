@@ -1,21 +1,22 @@
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Brand</th>
-      <th scope="col">Start</th>
-      <th scope="col">Finish</th>
-      <th scope="col">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @my_bookings.each do |booking|  %>
-    <tr>
-      <td><%= booking.car.brand %></td>
-      <td><%= booking.start_date %></td>
-      <td><%= booking.finish_date %></td>
-      <td><%= link_to "Edit", edit_booking_path(booking)  %> | <%= link_to "Delete", booking_path(booking), data: {turbo_method: :delete} %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
-
+<div class="content-with-navbar-spacing">
+   <table class="table table-striped">
+     <thead>
+       <tr>
+         <th scope="col">Brand</th>
+         <th scope="col">Start</th>
+         <th scope="col">Finish</th>
+         <th scope="col">Actions</th>
+       </tr>
+     </thead>
+     <tbody>
+     <% @my_bookings.each do |booking|  %>
+       <tr>
+         <td><%= booking.car.brand %></td>
+         <td><%= booking.start_date %></td>
+         <td><%= booking.finish_date %></td>
+         <td><%= link_to "Edit", edit_booking_path(booking)  %> | <%= link_to "Delete", booking_path(booking), data: {turbo_method: :delete} %></td>
+       </tr>
+     <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,11 +1,15 @@
-<%= simple_form_for(@car) do |c| %>
-  <%= c.input :brand%>
-  <%= c.input :model%>
-  <%= c.input :year%>
-  <%= c.input :price%>
-  <%= c.input :capacity%>
-  <%= c.input :color%>
-  <%= c.input :image_car%>
-  <%=  c.association :garage, collection: current_user.garages, prompt: "Choose a garage" %>
- <%=c.submit %>
+
+<div class="content-with-navbar-spacing">
+  <%= simple_form_for(@car) do |c| %>
+    <%= c.input :brand%>
+    <%= c.input :model%>
+    <%= c.input :year%>
+    <%= c.input :price%>
+    <%= c.input :capacity%>
+    <%= c.input :color%>
+    <%= c.input :extras%>
+    <%= c.input :image%>
+    <%=  c.association :garage, collection: current_user.garages, prompt: "Choose a garage" %>
+    <%=c.submit %>
   <%end%>
+</div>

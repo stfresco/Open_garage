@@ -1,18 +1,25 @@
-<div class="container">
-  <div class="row">
-    <%@cars.each do |c|%>
-      <div class="card m-3" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"><strong>Modelo: </strong><%=c.model%></h5>
-          <p class="card-text"><strong>Marca: </strong><%=c.brand%></p>
-          <p class="card-text"><strong>Capacidad: </strong><%=c.capacity%></p>
-          <p class="card-text"><strong>Precio: </strong><%=c.price%></p>
-          <p class="card-text"><strong>Año: </strong><%=c.year%></p>
-          <p class="card-text"><strong>Color: </strong><%=c.color%></p>
-          <%= link_to "Rentar", new_car_booking_path(c), class: "btn btn-primary" %>
+<div class="content-with-navbar-spacing">
+  <div class="container">
+    <div class="row">
+      <% @cars.each do |car| %>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm border-0 hover-zoom">
+            <% if car.image.attached? %>
+              <%= image_tag url_for(car.image), alt: car.model, class: "card-img-top img-fluid fixed-image" %>
+            <% else %>
+              <img src="placeholder.jpg" class="card-img-top img-fluid fixed-image" alt="No photo available">
+            <% end %>
+            <div class="card-body text-center">
+              <h5 class="card-title"><%= car.model %></h5>
+              <p class="text-muted"><strong>Precio:</strong> $<%= car.price %>/día</p>
+              <div class="d-flex justify-content-around">
+                <%= link_to "Rentar", new_car_booking_path(car), class: "btn btn-outline-primary btn-sm" %>
+                <%= link_to "Ver más", car_path(car), class: "btn btn-secondary btn-sm" %>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    <%end%>
+      <% end %>
+    </div>
   </div>
 </div>
