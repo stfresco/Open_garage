@@ -9,7 +9,8 @@ class GaragesController < ApplicationController
 
   def create
     @garage = Garage.new(garage_params)
-    if @garage.save
+    @garage.user = current_user
+    if @garage.save!
       redirect_to garages_path
     else
       render :new

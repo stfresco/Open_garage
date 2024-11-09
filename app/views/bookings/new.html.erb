@@ -1,6 +1,35 @@
-<h1>New booking</h1>
-<%= simple_form_for [@car, @booking] do |f| %>
-  <%= f.input :start_date  %>
-  <%= f.input :finish_date %>
-  <%= f.submit "Submit review", class: "btn btn-primary" %>
-<% end %>
+
+<div class="mycontainer">
+    <p class="mytext"><strong>Your Selection:</strong> </p>
+  <div class="mycards">
+    <div class="mycard">
+      <h3 class="card-title mb-4"><strong><%= @car.brand %> <%= @car.model %></strong></h3>
+    </div>
+    <div class="mycard">
+      <img src="https://www.budgetperu.com/files/mid-veh3.jpg" alt="Le Wagon logo" >
+    </div>
+  </div>
+</div>
+
+<div class="mybanner" style="background-image: url('https://cdn.www.gob.pe/uploads/document/file/1536765/WhatsApp%20Image%202021-01-08%20at%2009.50.54.jpeg.jpeg');">
+    <div class="containerbanner">
+      <h1>Book your reservation online</h1>
+      <div>
+        <h5 class="text-white" id="cambiarTexto">Obtain the best rate rigth away</h5>
+        <script>
+          const textos = ["Obtain the best rate rigth away", "Discover hot deals and free perks", "Fast and 100% secure"];
+          let indice = 0;
+          setInterval(() => {
+            indice = (indice + 1) % textos.length;
+            document.getElementById("cambiarTexto").textContent = textos[indice];
+          }, 2000);
+         </script>
+      </div>
+
+      <div>
+         <%= render "form", booking: @booking, car: @car %>
+         <p>First time renting a car?</p>
+      </div>
+    </div>
+  </div>
+</div>
