@@ -9,8 +9,9 @@ class GaragesController < ApplicationController
 
   def create
     @garage = Garage.new(garage_params)
-    if @garage.save
-      redirect_to garages_path
+    @garage.user = current_user
+    if @garage.save!
+      redirect_to my_garage_path
     else
       render :new
     end
@@ -36,13 +37,17 @@ class GaragesController < ApplicationController
   def destroy
     @garage = Garage.find(params[:id])
       if @garage.destroy
-        redirect_to garages_path
+        redirect_to my_garage_path, notice: "Garage eliminado exitosamente."
       end
+  end
+
+  def my_garage
+    @garage = Garage.where(user: current_user)
   end
 
   private
 
   def garage_params
-    params.require(:garage).permit(:name, :address, :user_id)
+    params.require(:garage).permit(:name, :address, :user_id, :image)
   end
 end

@@ -1,0 +1,32 @@
+<div class="content-with-navbar-spacing">
+  <h1>My Garages</h1>
+
+  <div class="mb-4">
+    <%= link_to "Crear Garage", new_garage_path, class: "btn btn-primary" %>
+  </div>
+
+  <% @garage.each do |g| %>
+    <div class="card mb-4" style="width: 18rem;">
+      <% if g.image.attached? %>
+        <%= image_tag url_for(g.image), alt: g.name, class: "card-img-top img-fluid" %>
+      <% else %>
+        <img src="placeholder.jpg" alt="No photo available" class="card-img-top img-fluid">
+      <% end %>
+
+      <div class="card-body">
+        <h3><%= g.name %></h3>
+        <p><%= g.address %></p>
+      </div>
+
+      <div class="card-body d-flex justify-content-between gap-1">
+        <%= link_to "Edit", edit_garage_path(g), class: "btn btn-warning btn-sm" %>
+        <%= link_to "Delete", garage_path(g), class: "btn btn-danger btn-sm", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+      </div>
+
+      <!-- Botón para registrar un auto en este garage -->
+      <div class="card-footer text-center">
+        <%= link_to "Registrar Auto", new_garage_car_path(g), class: "btn btn-outline-primary btn-sm" %>
+      </div>
+    </div>
+  <% end %>
+</div>

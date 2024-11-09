@@ -1,0 +1,70 @@
+.mybanner {
+  //padding: 110px 0;
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  position: relative;
+  padding: 20px;
+
+}
+
+.mybanner h1 {
+  color: white;
+  font-weight: bold;
+}
+
+.mybanner .containerbanner {
+  display:flex;
+  flex-direction: column;
+  //justify-content: start;
+  //align-items: start;
+  margin: 0px;
+  //justify-items: flex-start;
+  //padding: 100px;
+}
+
+.form-rent {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 100px;
+  left: 450px;
+}
+
+.form-rent p {
+  color:white;
+  font-size: 20px;
+  text-align: center;
+  text-shadow: 1px;
+}
+
+.mybanner.h1-edit{
+  margin-top: 10px;
+}
+
+.mybanner .containerbanner1 {
+  display:flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  margin: 40px;
+}
+.form-rent2 {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 280px;
+  left: 450px;
+}
+
+.form-rent2 p {
+  color: white;
+  font-size: 20px;
+  //opacity: 0.85;
+  text-align: center;
+  text-shadow: 10px;
+}

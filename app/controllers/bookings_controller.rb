@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_car, only: %i[new create]
+  
   def new
     @booking = Booking.new
   end
@@ -27,7 +28,7 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     if @booking.update(booking_params)
-      redirect_to booking_path
+      redirect_to my_bookings_path
     else
       render :edit, status: :unprocessable_entity
     end

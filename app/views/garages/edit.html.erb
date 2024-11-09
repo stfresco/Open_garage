@@ -1,5 +1,9 @@
-<%= simple_form_for(@garage) do |g| %>
-  <%= g.input :name%>
-  <%= g.input :address%>
- <%=g.submit %>
+<div class="content-with-navbar-spacing">
+  <%= simple_form_for(@garage) do |g| %>
+    <%= g.input :name%>
+    <%= g.input :address%>
+    <%=g.submit %>
   <%end%>
+
+  <%= link_to "Regresar", my_garage_path, class: "btn btn-secondary" %>
+</div>

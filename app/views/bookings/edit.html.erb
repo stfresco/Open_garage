@@ -1,6 +1,13 @@
-<h1>Edit booking</h1>
-<%= simple_form_for [@car, @booking] do |f| %>
-  <%= f.input :start_date  %>
-  <%= f.input :finish_date %>
-  <%= f.submit "Submit review", class: "btn btn-primary" %>
-<% end %>
+<div class="content-with-navbar-spacing">
+  <div class="mybanner" style="background-image: url('https://cdn.www.gob.pe/uploads/document/file/1536765/WhatsApp%20Image%202021-01-08%20at%2009.50.54.jpeg.jpeg');">
+      <div class="containerbanner1">
+        <h1>Edit your reservation</h1>
+      </div>
+
+    </div>
+    <div class="form-rent2">
+          <%= render "form", booking: @booking, car: @car %>
+          <p>Are you sure you want to change the date?</p>
+    </div>
+  </div>
+</div>

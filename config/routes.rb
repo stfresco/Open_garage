@@ -5,10 +5,8 @@ Rails.application.routes.draw do
   resources :cars
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
-
-
   resources :garages
-
+  get "my_garage", to: "garages#my_garage"
   # Defines the root path route ("/")
   # root "posts#index"
 
@@ -19,7 +17,12 @@ Rails.application.routes.draw do
   resources :bookings, only: [:show, :edit, :update, :destroy]
 
   get "my_bookings", to: "bookings#my_bookings"
+
+  resources :garages do
+    resources :cars, only: [:new, :create, :edit, :update, :destroy]
+  end
+
+  resources :cars, only: [:index, :show]
+
+  resources :bookings, only: [:create, :edit, :update, :destroy]
 end
-
-
-
