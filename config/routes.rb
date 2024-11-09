@@ -26,3 +26,6 @@ Rails.application.routes.draw do
 
   resources :bookings, only: [:create, :edit, :update, :destroy]
 end
+
+
+
