@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 
-<h1>OPEN GARAGE</h1>
-=======
 <div class="content-with-navbar-spacing">
->>>>>>> 73711d018bf25dc16cdbbcd1177dfc72723b1f75
 <div class="banner">
   <img id="banner" src="https://wallpapers.com/images/hd/ultra-wide-4k-car-3lxbiug6ognbvkxm.jpg" alt="Car">
 </div>
@@ -11,40 +7,50 @@
   <h1> <strong>Rent faster cars, in a faster way!</strong></h1>
   <h4>Go wherever you want! there's a car waiting for you</h4>
 </div>
-<div class="explore">
-  <div class="card mb-3" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="https://resources.turo.com/f/253489/792x176/2d5de50ebf/browse-entry_web.jpg/m/" class="img-fluid rounded-start" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Every car, for every ocassion</h5>
-        <p class="card-text"> See all of our cars, ranging from SUV'S to sport cars</p>
-        <p class="card-text"><small class="text-body-secondary">Our premium selection</small></p>
-        <%= link_to "See more!","/cars", class: "btn btn-primary" %>
+<div class="row d-flex justify-content-center">
+  <div class="col-6">
+    <div class="explore d-flex justify-content-center">
+      <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="https://img.freepik.com/premium-photo/vertical-view-fronts-many-cars-parked-parking-lot_646632-5853.jpg" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title"><strong>Every car, for every ocassion</strong></h5>
+            <p class="card-text"> See all of our cars, ranging from SUV'S to sport cars</p>
+            <p class="card-text"><small class="text-body-secondary">Our premium selection</small></p>
+            <%= link_to "See more!","/cars", class: "btn btn-primary" %>
+          </div>
+        </div>
       </div>
+    </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="explored d-flex justify-content-center">
+      <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+           <%= image_tag "garage.jpg", class: "img-fluid rounded-start" %>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title"><strong>Passive income, the easy way!</strong></h5>
+            <p class="card-text">Become a host and start making money today!</p>
+            <p class="card-text"><small class="text-body-secondary"> create your journey </small></p>
+          <%= link_to "Create your garage!","/garages/new", class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
   </div>
 </div>
-</div>
-<div class="explore">
-  <div class="card mb-3" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="https://preview.redd.it/a3v6a1rdb9841.jpg?width=640&crop=smart&auto=webp&s=04c8dbed4ddc10fe2338dfb6da8c809ee3f348c6" class="img-fluid rounded-start" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Get passive income with your own cars!</h5>
-        <p class="card-text">Become a host and start making money today!</p>
-        <p class="card-text"><small class="text-body-secondary"> create a garage with all the cars you want to rent out</small></p>
-       <%= link_to "Create your garage!","/garages/new", class: "btn btn-primary" %>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+
+
+
+ <!-- inicio del carrusel  -->
 <div id="carouselExample" class="carousel slide">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -65,4 +71,16 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
+</div>
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+  </div>
 </div>
