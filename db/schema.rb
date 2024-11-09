@@ -64,7 +64,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_05_211537) do
     t.bigint "garage_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image_url"
     t.index ["garage_id"], name: "index_cars_on_garage_id"
   end
 
