@@ -41,6 +41,10 @@ class GaragesController < ApplicationController
       end
   end
 
+  def my_garage
+    @garage = Garage.where(user: current_user)
+  end
+
   private
 
   def garage_params
