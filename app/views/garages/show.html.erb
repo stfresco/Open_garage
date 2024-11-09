@@ -1,13 +1,16 @@
+<div class="content-with-navbar-spacing">
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h3> <strong>Your Garage</strong></h3>
+      <h5 class="card-title"><%=@garage.address%></h5>
+      <p class="card-text"><%=@garage.name %></p>
+    </div>
 
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h3> <strong>Your Garage</strong></h3>
-    <h5 class="card-title"><%=@garage.address%></h5>
-    <p class="card-text"><%=@garage.name %></p>
+    <div class="card-body d-flex justify-content-between gap-1">
+      <%= link_to "Edit", edit_garage_path(@garage), class: "btn btn-warning btn-sm" %>
+      <%= link_to "Delete", garage_path(@garage), class: "btn btn-danger btn-sm", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+    </div>
+
+    <%= link_to "Register your car", new_garage_car_path(@garage), class: "btn btn-primary btn-block" %>
   </div>
-
-  <%= link_to "edit", edit_garage_path(@garage)%>
-  <%= link_to "Delete",garage_path(@garage), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-
-  <%= link_to "Register your car", new_garage_car_path(@garage), class: "btn btn-primary" %>
 </div>

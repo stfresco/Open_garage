@@ -1,36 +1,39 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "https://res.cloudinary.com/ds64mjyoj/image/upload/v1731140954/Key_car_xfcyel.jpg", alt: "Icono", class: "icon-class" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+  </div>
 
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-  <h1>Open garage</h1>
+    <%= link_to "Open garage", root_path, class: "position-absolute top-0 start-50 translate-middle-x h1 text-decoration-none text-dark" %>
   <ul class="navbar-nav me-auto">
-    <% if user_signed_in? %>
-      <p>Bienvenido, <%= current_user.first_name %>!</p>
+    <div class="position-absolute top-0 start-20 translate-middle-x">
+      <% if user_signed_in? %>
+      <p>Bienvenido<%= current_user.first_name %></p>
       <%#= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete %>
-    <% else %>
+      <% else %>
       <li class="nav-item">
         <%= link_to 'Iniciar sesión', new_user_session_path %> |
         <%= link_to 'Registrarse', new_user_registration_path %>
       </li>
-    <% end %>
+      <% end %>
+    </div>
     <li class="nav-item active">
-      <%= link_to "Home", "#", class: "nav-link" %>
+      <%= link_to "Home", root_path, class: "nav-link" %>
     </li>
     <li class="nav-item">
-      <%= link_to "Cars", "#", class: "nav-link" %>
+      <%= link_to "Cars", cars_path, class: "nav-link" %>
     </li>
     <li class="nav-item dropdown">
       <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
           <%= link_to "Action", "#", class: "dropdown-item" %>
-          <%= link_to "Another action", "#", class: "dropdown-item" %>
+          <%= link_to "Active garages", garages_path, class: "dropdown-item" %>
           <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
         </div>
     </li>
