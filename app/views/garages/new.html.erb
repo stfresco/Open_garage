@@ -1,6 +1,13 @@
-<h1>Create a new garage! 🚘</h1>
-<%= simple_form_for(@garage) do |g| %>
-  <%= g.input :name%>
-  <%= g.input :address%>
- <%=g.submit %>
+<div class="content-with-navbar-spacing">
+  <h1>Create a new garage! 🚘</h1>
+  <%= simple_form_for(@garage) do |g| %>
+    <%= g.input :name%>
+    <%= g.input :address%>
+    <%= g.input :image, as: :file, label: "Foto de portada" %>
+    <%= g.submit "Registrar Garage", class: "btn btn-primary" %>
   <%end%>
+
+   <div class="mt-3">
+    <%= link_to "Regresar a Garages", garages_path, class: "btn btn-secondary" %>
+  </div>
+</div>
