@@ -1,5 +1,5 @@
 <div class="content-with-navbar-spacing">
-   <table class="table table-striped">
+    <table class="table table-striped">
      <thead>
        <tr>
          <th scope="col">Brand</th>
@@ -14,9 +14,9 @@
          <td><%= booking.car.brand %></td>
          <td><%= booking.start_date %></td>
          <td><%= booking.finish_date %></td>
-         <td><%= link_to "Edit", edit_booking_path(booking)  %> | <%= link_to "Delete", booking_path(booking), data: {turbo_method: :delete} %></td>
+         <td><%= link_to "Edit", edit_booking_path(booking), class: "btn btn-secondary btn-sm" %> | <%= link_to "Delete", booking_path(booking), class: "btn btn-danger btn-sm", data: {turbo_method: :delete} %></td>
        </tr>
      <% end %>
     </tbody>
-  </table>
+  |</table>
 </div>
