@@ -20,3 +20,6 @@ Rails.application.routes.draw do
 
   get "my_bookings", to: "bookings#my_bookings"
 end
+
+
+
