@@ -1,0 +1,21 @@
+.mybanner {
+  padding: 110px 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.mybanner h1 {
+  color: white;
+}
+
+.mybanner p {
+  color: white;
+  font-size: 20px;
+  opacity: .7;
+}
+
+.mybanner containerbanner {
+  display:flex;
+  justify-items: flex-start;
+  padding: 100px;
+}
