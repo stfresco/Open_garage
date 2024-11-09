@@ -1,6 +1,8 @@
-<h1>New booking</h1>
-<%= simple_form_for [@car, @booking] do |f| %>
-  <%= f.input :start_date  %>
-  <%= f.input :finish_date %>
-  <%= f.submit "Submit review", class: "btn btn-primary" %>
-<% end %>
+<div class="content-with-navbar-spacing">
+ <h1>New booking</h1>
+  <%= simple_form_for [@car, @booking] do |f| %>
+    <%= f.input :start_date  %>
+    <%= f.input :finish_date %>
+    <%= f.submit "Submit review", class: "btn btn-primary" %>
+  <% end %>
+</div>
