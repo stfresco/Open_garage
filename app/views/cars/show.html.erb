@@ -21,9 +21,14 @@
 
         <div class="card-body d-flex justify-content-around">
           <%= link_to "Ver más modelos", cars_path, class: "btn btn-secondary btn-sm" %>
-          <%= link_to "Reservar este auto", new_car_booking_path(@car), class: "btn btn-primary btn-sm" unless current_user.id == @car.garage.user_id%>
-          <%#= link_to "Editar", edit_car_path(@car), class: "btn btn-warning btn-sm" %>
-          <%#= link_to "Eliminar", car_path(@car), class: "btn btn-danger btn-sm", data: { turbo_method: :delete, turbo_confirm: "¿Estás seguro?" } %>
+          <% if current_user && @car.garage && current_user.id != @car.garage.user_id %>
+            <%= link_to "Reservar este auto", new_car_booking_path(@car), class: "btn btn-primary btn-sm" %>
+          <% end %>
+
+          <% if current_user && @car.garage && current_user.id == @car.garage.user_id %>
+            <%= link_to "Editar", edit_car_path(@car), class: "btn btn-warning btn-sm" %>
+            <%= link_to "Eliminar", car_path(@car), class: "btn btn-danger btn-sm", data: { turbo_method: :delete, turbo_confirm: "¿Estás seguro?" } %>
+          <% end %>
         </div>
       </div>
     </div>

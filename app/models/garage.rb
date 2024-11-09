@@ -1,5 +1,6 @@
 class Garage < ApplicationRecord
   belongs_to :user
+  has_one_attached :image
 
   has_many :cars, dependent: :destroy
 

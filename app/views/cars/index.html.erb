@@ -13,7 +13,11 @@
               <h5 class="card-title"><%= car.model %></h5>
               <p class="text-muted"><strong>Precio:</strong> $<%= car.price %>/día</p>
               <div class="d-flex justify-content-around">
-                <%= link_to "Rentar", new_car_booking_path(car), class: "btn btn-outline-primary btn-sm" %>
+
+                <% if current_user && car.garage && current_user.id != car.garage.user_id %>
+                  <%= link_to "Rentar", new_car_booking_path(car), class: "btn btn-outline-primary btn-sm" %>
+                <% end %>
+
                 <%= link_to "Ver más", car_path(car), class: "btn btn-secondary btn-sm" %>
               </div>
             </div>
